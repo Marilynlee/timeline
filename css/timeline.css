@@ -1,0 +1,102 @@
+body{
+    position:relative;
+}
+.pick{
+    position: absolute;
+}
+.pick .pick-list{
+    font-size: 20px;
+}
+.pick .pick-list li{
+    list-style: none;
+    margin-bottom: -1px;
+    width: 60px;
+    height: 40px;
+    background-color: #a5ec5c;
+    line-height: 40px;
+    border: 1px solid #e63;
+    text-align: center;
+}
+.pick .pick-list li:hover,.pick .pick-list li.cur{
+    background-color: #64b70e;
+    border: 1px solid #f63;
+}
+
+
+.timeLine {
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+    font-family:Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;;
+}
+
+.timeLine:before {
+    content: '';
+    width: 10px;
+    height: 100%;
+    background-color: #cddc39;
+    position: absolute;
+    left: 20%;
+    top: 0;
+}
+
+.timeLine li {
+    list-style: none;
+    margin-left: 20%;
+    border: 1px solid #e3e3e3;
+    padding: 0 20px 10px;
+    margin-bottom: 30px;
+    position: relative;
+    background-color: #cddc39;
+
+}
+.timeLine li:before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-right:15px solid #cddc39;
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+    position: absolute;
+    left: -15px;
+    top: -1px;
+
+}
+
+.time {
+    font-size: 18px;
+    position: absolute;
+    left: -16%;
+    top: -15px;
+    text-align: center;
+    color: #e64d3c;
+}
+.time .time-year{
+    font-size: 26px;
+}
+
+.number {
+    font-weight: bold;
+    position: absolute;
+    left: -31px;
+    top: -4px;
+    border: 12px solid #a5ec5c;
+    border-radius: 50%;
+    margin-left: -10px;
+}
+.info-title{
+    border-bottom: 1px solid #7cc556;
+}
+.btn{
+    width: 80px;
+    height: 28px;
+    vertical-align: middle;
+    margin-top: 10px;
+    background-color: #f3fb59;
+    outline: 0;
+    border: 1px solid #f3fb59;
+    border-radius: 3px;
+}.btn a{
+     text-decoration: none;
+     color: black;
+}
