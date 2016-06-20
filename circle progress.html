@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>circle</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .circle{
+            position: relative;
+        }
+        .title{
+            width:500px;
+            height: 200px;
+            background-color: #dddddd;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="circle">
+    <div class="title">
+        <p>尝试一下好听吗？</p>
+    </div>
+    <canvas id="circle" width="100px;" height="100px">76%</canvas>
+</div>
+<script>
+    //    var canvas = document.getElementById('circle');
+    var canvas = $('#circle')[0];
+    var val=$('#circle').text();
+    console.log(val);
+    var context = canvas.getContext('2d');
+    var process = val.substring(0, val.length-1);
+    context.beginPath();
+    context.arc(50,50,50,0,2*Math.PI,true);
+    context.closePath();
+    context.fillStyle='#f1f1f1';
+    context.fill();
+
+    // 画进度
+    context.beginPath();
+    // 画扇形的时候这步很重要,画笔不在圆心画出来的不是扇形
+    context.moveTo(50, 50);
+    // 跟上面的圆唯一的区别在这里,不画满圆,画个扇形
+    context.arc(50, 50, 50, Math.PI * 3/2, Math.PI * 2*process /100-90, false);
+    context.closePath();
+    context.fillStyle = '#e74c3c';
+    context.fill();
+
+    // 画内部空白
+    context.beginPath();
+    context.moveTo(50, 50);
+    context.arc(50, 50, 45, 0, Math.PI * 2, true);
+    context.closePath();
+    context.fillStyle = 'rgba(255,255,255,1)';
+    context.fill();
+
+    //在中间写字
+    context.font = "bold 9pt Arial";
+    context.fillStyle = '#e74c3c';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.moveTo(50, 50);
+    context.fillText(val, 50, 50);
+</script>
+</body>
+</html>
